@@ -13,7 +13,10 @@ import { getTerminalVersion } from 'utils/v1/terminals'
 
 import { Link } from 'react-router-dom'
 
+import { CurrencyContext } from 'contexts/currencyContext'
+
 import { SECONDS_IN_DAY } from 'constants/numbers'
+import { V1_CURRENCY_CONTEXT } from 'constants/v1/currency'
 
 export default function TrendingProjectCard({
   project,
@@ -95,7 +98,9 @@ export default function TrendingProjectCard({
 
   const paymentCount = project.trendingPaymentsCount
 
-  return project ? (
+  if (!project) return <Loading />
+
+  return (
     <Link
       style={{
         borderRadius: radii.lg,
@@ -171,10 +176,12 @@ export default function TrendingProjectCard({
                 }}
               >
                 <span style={{ fontWeight: 600, marginTop: 3 }}>
-                  <ETHAmount
-                    amount={project.trendingVolume}
-                    precision={precision}
-                  />{' '}
+                  <CurrencyContext.Provider value={V1_CURRENCY_CONTEXT}>
+                    <ETHAmount
+                      amount={project.trendingVolume}
+                      precision={precision}
+                    />{' '}
+                  </CurrencyContext.Provider>
                 </span>
                 <span style={{ fontWeight: 400, color: colors.text.secondary }}>
                   <Trans>last {trendingWindowDays} days</Trans>{' '}
@@ -210,7 +217,5 @@ export default function TrendingProjectCard({
         </div>
       )}
     </Link>
-  ) : (
-    <Loading />
   )
 }

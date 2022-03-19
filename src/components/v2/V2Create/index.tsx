@@ -6,7 +6,6 @@ import V2UserProvider from 'providers/v2/UserProvider'
 
 import { t, Trans } from '@lingui/macro'
 import { ThemeContext } from 'contexts/themeContext'
-import { CurrencyContext } from 'contexts/currencyContext'
 
 import { readNetwork } from 'constants/networks'
 import V2WarningBanner from './V2WarningBanner'
@@ -16,8 +15,6 @@ import FundingTabContent from './tabs/FundingTab/FundingTabContent'
 import TokenTabContent from './tabs/TokenTab/TokenTabContent'
 import RulesTabContent from './tabs/RulesTab/RulesTabContent'
 import { TabContentProps } from './models'
-
-import { V2_CURRENCY_CONTEXT } from 'constants/v2/currency'
 
 const { TabPane } = Tabs
 
@@ -56,51 +53,49 @@ export default function V2Create() {
 
   return (
     <V2UserProvider>
-      <CurrencyContext.Provider value={V2_CURRENCY_CONTEXT}>
-        {isRinkeby ? <V2WarningBanner /> : null}
-        <div style={{ margin: '4rem', marginBottom: 0 }}>
-          {!isRinkeby && (
-            <div style={{ padding: '1rem', textAlign: 'center' }}>
-              <V2MainnetWarning />
-            </div>
-          )}
+      {isRinkeby ? <V2WarningBanner /> : null}
+      <div style={{ margin: '4rem', marginBottom: 0 }}>
+        {!isRinkeby && (
+          <div style={{ padding: '1rem', textAlign: 'center' }}>
+            <V2MainnetWarning />
+          </div>
+        )}
 
-          {isRinkeby && (
-            <div>
-              <h1
-                style={{
-                  marginBottom: '2rem',
-                  color: colors.text.primary,
-                  fontSize: 28,
-                }}
-              >
-                <Trans>Design your project</Trans> 🎨
-              </h1>
+        {isRinkeby && (
+          <div>
+            <h1
+              style={{
+                marginBottom: '2rem',
+                color: colors.text.primary,
+                fontSize: 28,
+              }}
+            >
+              <Trans>Design your project</Trans> 🎨
+            </h1>
 
-              <Tabs
-                activeKey={activeTab}
-                onChange={setActiveTab}
-                tabBarGutter={50}
-                size="large"
-              >
-                {TABS.map((tab, idx) => (
-                  <TabPane tab={<TabText>{tab.title}</TabText>} key={`${idx}`}>
-                    <tab.component
-                      onFinish={() => {
-                        // bail if on last tab.
-                        if (idx === TABS.length - 1) return
+            <Tabs
+              activeKey={activeTab}
+              onChange={setActiveTab}
+              tabBarGutter={50}
+              size="large"
+            >
+              {TABS.map((tab, idx) => (
+                <TabPane tab={<TabText>{tab.title}</TabText>} key={`${idx}`}>
+                  <tab.component
+                    onFinish={() => {
+                      // bail if on last tab.
+                      if (idx === TABS.length - 1) return
 
-                        setActiveTab(`${idx + 1}`)
-                        window.scrollTo(0, 0)
-                      }}
-                    />
-                  </TabPane>
-                ))}
-              </Tabs>
-            </div>
-          )}
-        </div>
-      </CurrencyContext.Provider>
+                      setActiveTab(`${idx + 1}`)
+                      window.scrollTo(0, 0)
+                    }}
+                  />
+                </TabPane>
+              ))}
+            </Tabs>
+          </div>
+        )}
+      </div>
     </V2UserProvider>
   )
 }

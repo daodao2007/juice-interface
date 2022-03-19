@@ -14,10 +14,13 @@ import useSubgraphQuery from 'hooks/SubgraphQuery'
 
 import { Link } from 'react-router-dom'
 
+import { CurrencyContext } from 'contexts/currencyContext'
+
 import Loading from './Loading'
 import ProjectLogo from './ProjectLogo'
 import ETHAmount from './ETHAmount'
 import { archivedProjectIds } from '../../constants/v1/archivedProjects'
+import { V1_CURRENCY_CONTEXT } from 'constants/v1/currency'
 
 type ProjectCardProject = Pick<
   Project,
@@ -138,7 +141,12 @@ export default function ProjectCard({
 
             <div>
               <span style={{ color: colors.text.primary, fontWeight: 500 }}>
-                <ETHAmount amount={_project?.totalPaid} precision={precision} />{' '}
+                <CurrencyContext.Provider value={V1_CURRENCY_CONTEXT}>
+                  <ETHAmount
+                    amount={_project?.totalPaid}
+                    precision={precision}
+                  />{' '}
+                </CurrencyContext.Provider>
               </span>
 
               <span style={{ color: colors.text.secondary }}>

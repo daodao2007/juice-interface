@@ -25,6 +25,7 @@ import { tokenSymbolText } from 'utils/tokenSymbolText'
 import { indexedProjectERC20s } from 'constants/v1/indexedProjectERC20s'
 
 import DownloadParticipantsModal from './DownloadParticipantsModal'
+import { V1_CURRENCY_ETH } from 'constants/v1/currency'
 
 const pageSize = 100
 
@@ -198,7 +199,7 @@ export default function ParticipantsModal({
                   <FormattedAddress address={p.wallet} />
                 </div>
                 <div style={smallHeaderStyle}>
-                  <CurrencySymbol currency={0} />
+                  <CurrencySymbol currency={V1_CURRENCY_ETH} />
                   <Trans>
                     {formatWad(p.totalPaid, { precision: 6 })} contributed
                   </Trans>

@@ -7,6 +7,10 @@ import V1Create from 'components/v1/V1Create'
 import Projects from 'components/Projects'
 import V2UserProvider from 'providers/v2/UserProvider'
 import Loading from 'components/shared/Loading'
+import { CurrencyContext } from 'contexts/currencyContext'
+
+import { V1_CURRENCY_CONTEXT } from 'constants/v1/currency'
+import { V2_CURRENCY_CONTEXT } from 'constants/v2/currency'
 
 const V2Create = lazy(() => import('components/v2/V2Create'))
 const V2Dashboard = lazy(() => import('components/v2/V2Dashboard'))
@@ -23,31 +27,37 @@ export default function Router() {
         <Route exact path="/">
           <Landing />
         </Route>
-        <Route path="/create">
-          <V1Create />
-        </Route>
-
         <Route path="/projects/:owner">
           <Projects />
         </Route>
         <Route path="/projects">
           <Projects />
         </Route>
-        <Route path="/p/:handle">
-          <V1Dashboard />
-        </Route>
-        <Route path="/v2/create">
-          <Suspense fallback={<Loading />}>
-            <V2Create />
-          </Suspense>
-        </Route>
-        <Route path="/v2/p/:projectId">
-          <Suspense fallback={<Loading />}>
-            <V2UserProvider>
-              <V2Dashboard />
-            </V2UserProvider>
-          </Suspense>
-        </Route>
+
+        <CurrencyContext.Provider value={V1_CURRENCY_CONTEXT}>
+          <Route path="/create">
+            <V1Create />
+          </Route>
+          <Route path="/p/:handle">
+            <V1Dashboard />
+          </Route>
+        </CurrencyContext.Provider>
+
+        <CurrencyContext.Provider value={V2_CURRENCY_CONTEXT}>
+          <Route path="/v2/create">
+            <Suspense fallback={<Loading />}>
+              <V2Create />
+            </Suspense>
+          </Route>
+          <Route path="/v2/p/:projectId">
+            <Suspense fallback={<Loading />}>
+              <V2UserProvider>
+                <V2Dashboard />
+              </V2UserProvider>
+            </Suspense>
+          </Route>
+        </CurrencyContext.Provider>
+
         <Route path="/:route">
           <CatchallRedirect />
         </Route>

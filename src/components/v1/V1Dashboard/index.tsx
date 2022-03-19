@@ -40,7 +40,6 @@ import { archivedProjectIds } from 'constants/v1/archivedProjects'
 
 import Loading from '../../shared/Loading'
 import V1Project from '../V1Project'
-import { V1_CURRENCY_CONTEXT } from 'constants/v1/currency'
 
 export default function V1Dashboard() {
   const { handle }: { handle?: string } = useParams()
@@ -237,22 +236,20 @@ export default function V1Dashboard() {
 
   return (
     <V1ProjectContext.Provider value={project}>
-      <CurrencyContext.Provider value={V1_CURRENCY_CONTEXT}>
-        <div style={layouts.maxWidth}>
-          <V1Project />
-          <div style={{ textAlign: 'center', padding: 20 }}>
-            <ScrollToTopButton />
-          </div>
-          <FeedbackFormButton projectHandle={handle} />
-          <FeedbackPromptModal
-            visible={feedbackModalVisible}
-            onOk={closeFeedbackModal}
-            onCancel={closeFeedbackModal}
-            projectHandle={handle}
-            userAddress={owner}
-          />
+      <div style={layouts.maxWidth}>
+        <V1Project />
+        <div style={{ textAlign: 'center', padding: 20 }}>
+          <ScrollToTopButton />
         </div>
-      </CurrencyContext.Provider>
+        <FeedbackFormButton projectHandle={handle} />
+        <FeedbackPromptModal
+          visible={feedbackModalVisible}
+          onOk={closeFeedbackModal}
+          onCancel={closeFeedbackModal}
+          projectHandle={handle}
+          userAddress={owner}
+        />
+      </div>
     </V1ProjectContext.Provider>
   )
 }
