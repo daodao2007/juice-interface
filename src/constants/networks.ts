@@ -17,7 +17,7 @@ export const NETWORKS: Record<number, NetworkInfo> = {
   31337: {
     name: NetworkName.localhost,
     color: '#666666',
-    chainId: 31337,
+    chainId: 1337,
     blockExplorer: '',
     rpcUrl: 'http://' + window.location.hostname + ':8545',
   },
