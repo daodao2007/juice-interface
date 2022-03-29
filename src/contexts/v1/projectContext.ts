@@ -37,34 +37,11 @@ export type V1ProjectContextType = {
     | undefined
 }
 
-// export const V1ProjectContext = createContext<V1ProjectContextType>({
-//   projectId: undefined,
-//   projectType: 'standard',
-//   createdAt: undefined,
-//   handle: undefined,
-//   metadata: undefined,
-//   owner: undefined,
-//   earned: undefined,
-//   currentFC: undefined,
-//   queuedFC: undefined,
-//   currentPayoutMods: undefined,
-//   currentTicketMods: undefined,
-//   queuedPayoutMods: undefined,
-//   queuedTicketMods: undefined,
-//   tokenAddress: undefined,
-//   tokenSymbol: undefined,
-//   balance: undefined,
-//   balanceInCurrency: undefined,
-//   overflow: undefined,
-//   isPreviewMode: false,
-//   isArchived: false,
-//   terminal: undefined,
-// })
 export const V1ProjectContext = createContext<V1ProjectContextType>({
   projectId: undefined,
   projectType: 'standard',
   createdAt: undefined,
-  handle: 'juice',
+  handle: undefined,
   metadata: undefined,
   owner: undefined,
   earned: undefined,

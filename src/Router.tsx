@@ -36,7 +36,7 @@ export default function Router() {
         <Route path="/p/:handle">
           <V1Dashboard />
         </Route>
-        {/* <Route path="/v2/create">
+        <Route path="/v2/create">
           <Suspense fallback={<Loading />}>
             <V2Create />
           </Suspense>
@@ -48,7 +48,7 @@ export default function Router() {
             </V2UserProvider>
           </Suspense>
         </Route>
-        <Route path="/:route">
+        {/* <Route path="/:route">
           <CatchallRedirect />
         </Route> */}
       </Switch>

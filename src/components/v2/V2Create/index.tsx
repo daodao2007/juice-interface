@@ -57,15 +57,15 @@ export default function V2Create() {
   return (
     <V2UserProvider>
       <CurrencyContext.Provider value={V2_CURRENCY_CONTEXT}>
-        {isRinkeby ? <V2WarningBanner /> : null}
+        {/* {isRinkeby ? <V2WarningBanner /> : null} */}
         <div style={{ margin: '4rem', marginBottom: 0 }}>
-          {!isRinkeby && (
+          {/* {!isRinkeby && (
             <div style={{ padding: '1rem', textAlign: 'center' }}>
               <V2MainnetWarning />
             </div>
-          )}
+          )} */}
 
-          {isRinkeby && (
+          {!isRinkeby && (
             <div>
               <h1
                 style={{
