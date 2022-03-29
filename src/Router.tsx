@@ -27,16 +27,16 @@ export default function Router() {
           <V1Create />
         </Route> */}
 
-        <Route path="/projects/:owner">
+        {/* <Route path="/projects/:owner">
           <Projects />
-        </Route>
-        {/* <Route path="/projects">
+        </Route> 
+        <Route path="/projects">
           <Projects />
-        </Route>
+        </Route>*/}
         <Route path="/p/:handle">
           <V1Dashboard />
         </Route>
-        <Route path="/v2/create">
+        {/* <Route path="/v2/create">
           <Suspense fallback={<Loading />}>
             <V2Create />
           </Suspense>

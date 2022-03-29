@@ -127,7 +127,7 @@ export default function Projects() {
   return (
     <div style={{ ...layouts.maxWidth }}>
       <div style={{ marginBottom: 20 }}>
-        <div
+        {/* <div
           style={{
             display: 'flex',
             justifyContent: 'space-between',
@@ -143,7 +143,7 @@ export default function Projects() {
               <Trans>Create project</Trans>
             </Button>
           </Link>
-        </div>
+        </div> */}
 
         <div>
           <p style={{ maxWidth: 800, marginBottom: 20 }}>

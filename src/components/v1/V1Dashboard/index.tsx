@@ -238,7 +238,7 @@ export default function V1Dashboard() {
       <CurrencyContext.Provider value={V1_CURRENCY_CONTEXT}>
         <div style={layouts.maxWidth}>
           <V1Project />
-          <div style={{ textAlign: 'center', padding: 20 }}>
+          {/* <div style={{ textAlign: 'center', padding: 20 }}>
             <ScrollToTopButton />
           </div>
           <FeedbackFormButton projectHandle={handle} />
@@ -248,7 +248,7 @@ export default function V1Dashboard() {
             onCancel={closeFeedbackModal}
             projectHandle={handle}
             userAddress={owner}
-          />
+          /> */}
         </div>
       </CurrencyContext.Provider>
     </V1ProjectContext.Provider>
