@@ -4,7 +4,7 @@ Juicebox frontend application.
 
 - Mainnet: https://juicebox.money
 - Rinkeby: https://rinkeby.juicebox.money
-- Mumbai-testnet:
+- Mumbai-testnet: http://juice.zsharing.net:8080
 
 ## Suggest a feature
 

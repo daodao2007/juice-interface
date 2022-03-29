@@ -16,8 +16,8 @@ export default function Navbar() {
       {/* <TopLeftNavItems /> */}
 
       <Space size="middle" style={{ ...topRightNavStyles }}>
-        {/* <NavLanguageSelector />
-        <ThemePicker /> */}
+        <NavLanguageSelector />
+        {/* <ThemePicker /> */}
         <Account />
       </Space>
     </Header>
