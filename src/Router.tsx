@@ -23,14 +23,14 @@ export default function Router() {
         <Route exact path="/">
           <Landing />
         </Route>
-        <Route path="/create">
+        {/* <Route path="/create">
           <V1Create />
-        </Route>
+        </Route> */}
 
         <Route path="/projects/:owner">
           <Projects />
         </Route>
-        <Route path="/projects">
+        {/* <Route path="/projects">
           <Projects />
         </Route>
         <Route path="/p/:handle">
@@ -50,7 +50,7 @@ export default function Router() {
         </Route>
         <Route path="/:route">
           <CatchallRedirect />
-        </Route>
+        </Route> */}
       </Switch>
     </HashRouter>
   )

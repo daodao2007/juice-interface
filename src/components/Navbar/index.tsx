@@ -13,11 +13,11 @@ export default function Navbar() {
   const isMobile = useMobile()
   return !isMobile ? (
     <Header className="top-nav" style={{ ...topNavStyles }}>
-      <TopLeftNavItems />
+      {/* <TopLeftNavItems /> */}
 
       <Space size="middle" style={{ ...topRightNavStyles }}>
-        <NavLanguageSelector />
-        <ThemePicker />
+        {/* <NavLanguageSelector />
+        <ThemePicker /> */}
         <Account />
       </Space>
     </Header>

@@ -91,7 +91,7 @@ export default function V1Project({
         </Col>
 
         <Col xs={24} md={column ? 24 : 12} style={{ marginTop: gutter }}>
-          <ProjectActivity />
+          {/* <ProjectActivity /> */}
         </Col>
       </Row>
     </div>

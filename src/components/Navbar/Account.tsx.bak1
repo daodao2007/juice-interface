@@ -1,19 +1,37 @@
 import { Button } from 'antd'
 import { NetworkContext } from 'contexts/networkContext'
 
-import { useContext } from 'react'
+import { useContext, createContext } from 'react'
 import { Trans } from '@lingui/macro'
 
 import Wallet from './Wallet'
+
+// import { useStore } from '@/store'
 
 export default function Account() {
   const { userAddress, signingProvider, onSelectWallet } =
     useContext(NetworkContext)
 
+  const Context = createContext()
+
+  const useStore = () => {
+    return useContext(Context)
+  }
+  
+  const [ state, dispatch ] = useStore()
+
+  const buttonAction = ({ isConnecting, wallet }, dispatch) => {
+    if (isConnecting) return undefined
+  
+    return (wallet)
+      ? () => dispatch(disconnectAsync())
+      : () => dispatch(connectAsync())
+  }
+  
   if (!signingProvider) {
     return (
       // <Button onClick={onSelectWallet}>
-      <Button onClick={onSelectWallet}>
+      <Button onClick={buttonAction(state, dispatch)}>
         <Trans>Connect</Trans>
       </Button>
     )

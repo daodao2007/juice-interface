@@ -17,7 +17,7 @@ export const NETWORKS: Record<number, NetworkInfo> = {
   31337: {
     name: NetworkName.localhost,
     color: '#666666',
-    chainId: 1337,
+    chainId: 31337,
     blockExplorer: '',
     rpcUrl: 'http://' + window.location.hostname + ':8545',
   },
@@ -28,6 +28,13 @@ export const NETWORKS: Record<number, NetworkInfo> = {
     rpcUrl: `https://mainnet.infura.io/v3/${infuraId}`,
     blockExplorer: 'https://etherscan.io/',
   },
+  // 1: {
+  //   name: NetworkName.mainnet,
+  //   color: '#ff8b9e',
+  //   chainId: 1,
+  //   rpcUrl: `http://127.0.0.1:8545`,
+  //   blockExplorer: 'https://etherscan.io/',
+  // },
   42: {
     name: NetworkName.kovan,
     color: '#7003DD',

@@ -78,7 +78,7 @@ export default function Landing() {
 
   return (
     <div>
-      <section style={section}>
+      {/* <section style={section}>
         <div style={wrapper}>
           <Row gutter={30} align="middle">
             <Col
@@ -194,10 +194,10 @@ export default function Landing() {
             </Col>
           </Row>
         </div>
-      </section>
+      </section> */}
 
-      <TrendingSection />
-
+      {/* <TrendingSection /> */}
+      {/* 
       <section
         style={{
           ...section,
@@ -241,9 +241,9 @@ export default function Landing() {
             </Col>
           </Row>
         </div>
-      </section>
+      </section> */}
 
-      <section
+      {/* <section
         style={{
           ...section,
           paddingTop: 60,
@@ -322,7 +322,7 @@ export default function Landing() {
             </Col>
           </Row>
         </div>
-      </section>
+      </section> */}
 
       {window.innerWidth > 600 && (
         <section
@@ -338,7 +338,7 @@ export default function Landing() {
         </section>
       )}
 
-      <section
+      {/* <section
         style={{
           padding: 30,
           paddingTop: 80,
@@ -383,9 +383,9 @@ export default function Landing() {
             </Col>
           </Row>
         </div>
-      </section>
+      </section> */}
 
-      <section>
+      {/* <section>
         <div
           id="faq"
           style={{
@@ -407,9 +407,9 @@ export default function Landing() {
             <Faq />
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <div
+      {/* <div
         style={{
           display: 'flex',
           justifyContent: 'center',
@@ -434,9 +434,9 @@ export default function Landing() {
           }
           alt="Powerlifting orange hitting an olympic deadlift"
         />
-      </div>
+      </div> */}
 
-      <div
+      {/* <div
         style={{
           background: 'black',
           padding: 40,
@@ -450,9 +450,9 @@ export default function Landing() {
             and economy to make Juicebox possible.
           </Trans>
         </h3>
-      </div>
-      <FeedbackFormButton />
-      <Footer />
+      </div> */}
+      {/* <FeedbackFormButton />
+      <Footer /> */}
     </div>
   )
 }

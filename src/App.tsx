@@ -50,7 +50,7 @@ function App() {
         </Content>
       </Layout>
 
-      <Modal
+      {/* <Modal
         visible={switchNetworkModalVisible}
         centered
         closable={false}
@@ -80,7 +80,7 @@ function App() {
               })}
           </Space>
         </div>
-      </Modal>
+      </Modal> */}
     </>
   )
 }
